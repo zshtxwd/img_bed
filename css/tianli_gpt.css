@@ -321,7 +321,6 @@ ins.adsbygoogle {
   .cursor {
     display: inline-block;
     animation: blink-caret 0.5s step-end infinite;
-    border-right: 0.1em solid black; /* 添加光标效果 */
   }
   
   @keyframes typing {
@@ -335,11 +334,12 @@ ins.adsbygoogle {
   
   @keyframes blink-caret {
     from, to {
-      border-color: transparent;
+      opacity: 0;
     }
     50% {
-      border-color: black;
+      opacity: 1;
     }
   }
+  
   
   

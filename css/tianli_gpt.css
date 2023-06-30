@@ -312,15 +312,19 @@ ins.adsbygoogle {
 
 .typing-effect {
     overflow: hidden;
-    white-space: pre-wrap; /* 使用 pre-wrap 属性来保留换行符 */
-    word-break: break-word; /* 在需要时断行 */
-    font-weight: bolder;
+    white-space: pre-wrap;
+    word-break: break-word;
   }
   
-  .typing-effect::after {
+  .typing-line {
+    display: inline-block;
+  }
+  
+  .typing-line::after {
     content: '|';
     display: inline-block;
     animation: blink-caret 0.5s step-end infinite;
+    font-weight: bolder;
   }
   
   @keyframes typing {

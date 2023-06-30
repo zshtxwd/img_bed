@@ -318,11 +318,6 @@ ins.adsbygoogle {
     word-break: break-word;
   }
   
-  .cursor {
-    display: inline-block;
-    animation: blink-caret 0.5s step-end infinite;
-  }
-  
   @keyframes typing {
     from {
       width: 0;
@@ -334,12 +329,13 @@ ins.adsbygoogle {
   
   @keyframes blink-caret {
     from, to {
-      opacity: 0;
+      border-color: transparent;
     }
     50% {
-      opacity: 1;
+      border-color: black;
     }
   }
+  
   
   
   

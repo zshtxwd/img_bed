@@ -139,25 +139,26 @@ var tianliGPT = {
 }
 
 function runTianliGPT() {
-  insertAIDiv(tianliGPT_postSelector);
   const content = tianliGPT.getTitleAndContent();
   if (!content && content !== '') {
     console.log('TianliGPT本次提交的内容为：' + content);
   }
   tianliGPT.fetchTianliGPT(content).then(summary => {
     const aiExplanationDiv = document.querySelector('.tianliGPT-explanation');
-    aiExplanationDiv.innerHTML = ''; // 清空元素内容
+    aiExplanationDiv.textContent = ''; // 清空元素内容
     aiExplanationDiv.classList.add('typing-effect'); // 添加打印效果的CSS类
     const characters = summary.split(''); // 将摘要文字拆分为单个字符
     let index = 0;
     const intervalId = setInterval(() => {
-      aiExplanationDiv.innerHTML += characters[index++]; // 逐个添加字符
+      aiExplanationDiv.textContent += characters[index++]; // 逐个添加字符
       if (index === characters.length) {
         clearInterval(intervalId); // 所有字符添加完毕后清除定时器
+        aiExplanationDiv.classList.remove('typing-effect'); // 移除打印效果的CSS类，停止光标闪烁效果
       }
     }, 50); // 设置打印速度，可以根据需要进行调整
   });
 }
+
 
 
 function checkURLAndRun() {

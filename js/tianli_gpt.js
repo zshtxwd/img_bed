@@ -157,11 +157,13 @@ function runTianliGPT() {
       }
       if (index === characters.length) {
         clearInterval(intervalId); // 所有字符添加完毕后清除定时器
+        aiExplanationDiv.innerHTML += '<span class="cursor"></span>'; // 添加光标元素
         aiExplanationDiv.classList.remove('typing-effect'); // 移除打印效果的CSS类，停止光标闪烁效果
       }
     }, 50); // 设置打印速度，可以根据需要进行调整
   });
 }
+
 
 
 

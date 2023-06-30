@@ -310,6 +310,8 @@ ins.adsbygoogle {
     fill: var(--heo-main);
 }
 
+
+
 .typing-effect {
     overflow: hidden;
     white-space: pre-wrap;
@@ -319,6 +321,7 @@ ins.adsbygoogle {
   .cursor {
     display: inline-block;
     animation: blink-caret 0.5s step-end infinite;
+    border-right: 0.1em solid black; /* 添加光标效果 */
   }
   
   @keyframes typing {
@@ -332,10 +335,11 @@ ins.adsbygoogle {
   
   @keyframes blink-caret {
     from, to {
-      opacity: 0;
+      border-color: transparent;
     }
     50% {
-      opacity: 1;
+      border-color: black;
     }
   }
+  
   

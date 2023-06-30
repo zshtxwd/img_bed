@@ -312,32 +312,30 @@ ins.adsbygoogle {
 
 .typing-effect {
     overflow: hidden;
-    /* 隐藏超出容器的文字 */
-    /* white-space: nowrap; */
-    /* 禁止文字换行 */
-    border-right: 0.1em solid #000;
-    /* 添加光标效果 */
-    animation: typing 1s steps(40, end), blink-caret 0.5s step-end infinite;
-}
-
-@keyframes typing {
+    white-space: nowrap;
+  }
+  
+  .typing-effect::after {
+    content: '|'; /* 光标的内容 */
+    display: inline-block;
+    animation: blink-caret 0.5s step-end infinite;
+  }
+  
+  @keyframes typing {
     from {
-        width: 0;
+      width: 0;
     }
-
     to {
-        width: 100%;
+      width: 100%;
     }
-}
-
-@keyframes blink-caret {
-
-    from,
-    to {
-        border-color: transparent;
+  }
+  
+  @keyframes blink-caret {
+    from, to {
+      color: transparent; /* 或者使用 background-color: transparent; */
     }
-
     50% {
-        border-color: #000;
+      color: black; /* 或者使用 background-color: black; */
     }
-}
+  }
+  

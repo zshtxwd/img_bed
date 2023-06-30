@@ -312,13 +312,14 @@ ins.adsbygoogle {
 
 .typing-effect {
     overflow: hidden;
-    white-space: nowrap;
+    /* white-space: nowrap; */
   }
   
   .typing-effect::after {
     content: '|'; /* 光标的内容 */
     display: inline-block;
     animation: blink-caret 0.5s step-end infinite;
+    font-weight: bolder;
   }
   
   @keyframes typing {

@@ -147,18 +147,17 @@ function runTianliGPT() {
   tianliGPT.fetchTianliGPT(content).then(summary => {
     const aiExplanationDiv = document.querySelector('.tianliGPT-explanation');
     aiExplanationDiv.innerHTML = ''; // 清空元素内容
+    aiExplanationDiv.classList.add('typing-effect'); // 添加打印效果的CSS类
     const characters = summary.split(''); // 将摘要文字拆分为单个字符
     let index = 0;
-    let currentLine = document.createElement('span'); // 创建新的行元素
-    aiExplanationDiv.appendChild(currentLine); // 将行元素添加到父容器
     const intervalId = setInterval(() => {
-      currentLine.innerHTML += characters[index++]; // 逐个添加字符到当前行
+      aiExplanationDiv.innerHTML += characters[index++]; // 逐个添加字符
       if (characters[index-1] === '\n') {
-        currentLine = document.createElement('span'); // 创建新的行元素
-        aiExplanationDiv.appendChild(currentLine); // 将行元素添加到父容器
+        aiExplanationDiv.innerHTML += '<br>'; // 添加换行标记
       }
       if (index === characters.length) {
         clearInterval(intervalId); // 所有字符添加完毕后清除定时器
+        aiExplanationDiv.classList.remove('typing-effect'); // 移除打印效果的CSS类，停止光标闪烁效果
       }
     }, 50); // 设置打印速度，可以根据需要进行调整
   });

@@ -139,6 +139,7 @@ var tianliGPT = {
 }
 
 function runTianliGPT() {
+  insertAIDiv(tianliGPT_postSelector);
   const content = tianliGPT.getTitleAndContent();
   if (!content && content !== '') {
     console.log('TianliGPT本次提交的内容为：' + content);

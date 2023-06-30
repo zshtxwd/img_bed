@@ -312,14 +312,15 @@ ins.adsbygoogle {
 
 .typing-effect {
     overflow: hidden;
-    /* white-space: nowrap; */
+    white-space: pre-wrap; /* 使用 pre-wrap 属性来保留换行符 */
+    word-break: break-word; /* 在需要时断行 */
+    font-weight: bolder;
   }
   
   .typing-effect::after {
-    content: '|'; /* 光标的内容 */
+    content: '|';
     display: inline-block;
     animation: blink-caret 0.5s step-end infinite;
-    font-weight: bolder;
   }
   
   @keyframes typing {
@@ -333,10 +334,10 @@ ins.adsbygoogle {
   
   @keyframes blink-caret {
     from, to {
-      color: transparent; /* 或者使用 background-color: transparent; */
+      color: transparent;
     }
     50% {
-      color: black; /* 或者使用 background-color: black; */
+      color: black;
     }
   }
   
